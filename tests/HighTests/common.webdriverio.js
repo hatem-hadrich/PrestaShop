@@ -1,4 +1,5 @@
 'use strict';
+
 var client;
 var webdriverio = require('webdriverio');
 var globals = require('./globals.webdriverio');
@@ -86,7 +87,6 @@ function initCommands(client) {
             .deleteCookie()
             .call(cb);
     });
-
 }
 
 const getClient = () => {
@@ -103,11 +103,8 @@ const getClient = () => {
   return client;
 };
 
-
 module.exports = {
-
   getClient,
-
   browser: function() {
     return options.desiredCapabilities.browserName
   }

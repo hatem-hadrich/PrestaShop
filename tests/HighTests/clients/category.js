@@ -142,12 +142,6 @@ class Category extends prestashop_client {
         .then((text) => expect(text).to.be.equal("this is the meta description"));
   }
 
-  /*    checkCategorykeyswordsText(){
-   return this.client
-   .then(() => this.client.getAttribute(selector.BO.CatalogPage.CategorySubmenu.keyswords,"value"))
-   .then(text => expect(text).to.contains("keyswords"));
-   }*/
-
   checkCategorySimplifyURL(){
     return this.client
         .then(() => this.client.getAttribute(selector.BO.CatalogPage.CategorySubmenu.simplify_URL_input,"value"))
