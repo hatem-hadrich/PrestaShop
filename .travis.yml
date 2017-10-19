@@ -40,7 +40,9 @@ before_script:
   - sleep 25
 
 script:
-  - mkdir test/screenshots
+  - cd test
+  - mkdir screenshots
+  - cd ..
   - $TRAVIS_BUILD_DIR/node_modules/mocha/bin/mocha test/campaigns/high/category
   - curl http://localhost/
 

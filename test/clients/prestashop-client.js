@@ -23,7 +23,7 @@ class PrestashopClient {
   }
 
   takeScreenshot() {
-    return this.client.saveScreenshot(`screenshots/${this.client.desiredCapabilities.browserName}_exception_${global.date_time}.png`);
+    return this.client.saveScreenshot(`test/screenshots/${this.client.desiredCapabilities.browserName}_exception_${global.date_time}.png`);
   }
 
   open() {
