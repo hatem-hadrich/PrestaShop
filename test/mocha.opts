@@ -1,5 +1,5 @@
 --require ./test/helpers.js
---URL=localhost
+
 --timeout 200000
 --slow 45000
 --reporter mochawesome

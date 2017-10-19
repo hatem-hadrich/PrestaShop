@@ -75,15 +75,14 @@ class Category extends PrestashopClient {
   addCategorySuccessPanel(index, erreurmsg) {
     return this.client
       .waitForExist(selector.BO.CatalogPage.CategorySubmenu.success_panel)
-/*        .getText(selector.BO.CatalogPage.CategorySubmenu.success_panel).then(function (text) {
+      .getText(selector.BO.CatalogPage.CategorySubmenu.success_panel).then(function (text) {
         text = text.indexOf(index);
         if (text === -1) {
-          done(new Error(erreurmsg));
+            this.client.done(new Error(erreurmsg));
         }
-      })*/
-      .then(() => this.client.getText(selector.BO.CatalogPage.CategorySubmenu.success_panel))
-      .then((text) => text = text.indexOf(index))
-      .then((text) => expect(text).to.not.equal(-1));
+      })
+
+
   }
 
   goToCategoryBO() {
