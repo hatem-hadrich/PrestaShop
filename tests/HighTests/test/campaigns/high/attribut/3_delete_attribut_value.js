@@ -12,6 +12,7 @@ scenario('Delete attribut value', client => {
 scenario('The Check of the attribute value in Front Office', client => {
   test('should open the browser', () => client.open());
   test('should sign in BO', () => client.signinFO());
-  test('should search for the product', () => client.searchForProduct('update'));
-  test('should Check updated attribute in Front Office', () => client.checkForProductAttributFO('deleted'));
+  test('should search for the product', () => client.searchForProduct());
+  test('should Check updated attribute in Front Office', () => client.checkForProductAttributValuedeletedFO());
+  test('should sign out FO', () => client.signoutFO());
 }, 'attribut', true);

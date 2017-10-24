@@ -15,7 +15,6 @@ scenario('Create attribut', client => {
   test('should sign out BO', () => client.signoutBO());
 }, 'attribut', true);
 
-
 scenario('Create product', client => {
   test('should open the browser', () => client.open());
   test('should sign in BO', () => client.signinBO());
@@ -31,10 +30,11 @@ scenario('Create product', client => {
   test('should sign out BO', () => client.signoutBO());
 }, 'create_product', true);
 
-
 scenario('The Check of the Product attribute in Front Office', client => {
   test('should open the browser', () => client.open());
-  test('should sign in BO', () => client.signinFO());
+  test('should sign in FO', () => client.signinFO());
   test('should search for the product', () => client.searchForProduct());
-  test('should Check attribute in Front Office', () => client.checkForProductAttributFO('create'));
+  test('should check for the product attribut name', () => client.checkCreatedAttributNameForProduct());
+  test('should Check attribute in Front Office', () => client.checkForProductAttributValueCreatedFO());
+  test('should sign out FO', () => client.signoutFO());
 }, 'attribut', true);

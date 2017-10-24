@@ -234,7 +234,10 @@ module.exports = {
         product_search_button: '.material-icons.search',
         product_result_name: '.h3.product-title > a',
         product_result_price: '[itemprop="price"]',
-        attribut_name: '//*[@id="add-to-cart-or-refresh"]/div[1]/div/span'
+        attribut_name: '//*[@id="add-to-cart-or-refresh"]/div[1]/div/span',
+        attribut_value_1:'//*[@id="add-to-cart-or-refresh"]/div[1]/div/ul/li[1]/label/span',
+        attribut_value_2:'//*[@id="add-to-cart-or-refresh"]/div[1]/div/ul/li[2]/label/span',
+        attribut_value_3:'//*[@id="add-to-cart-or-refresh"]/div[1]/div/ul/li[3]/label/span'
       }
     }
 

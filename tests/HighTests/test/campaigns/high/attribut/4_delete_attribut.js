@@ -13,4 +13,5 @@ scenario('The Check of the deleted attribute in Front Office', client => {
   test('should sign in BO', () => client.signinFO());
   test('should search for the product', () => client.searchForProduct());
   test('should Check deleted attribute in Front Office', () => client.checkDeletedAttributFO());
+  test('should sign out FO', () => client.signoutFO());
 }, 'attribut', true);

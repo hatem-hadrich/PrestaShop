@@ -79,48 +79,54 @@ class Attribut extends PrestashopClient {
   searchForProduct(type) {
     return this.client
       .waitForExist(selector.FO.SearchProductPage.product_search_input, 90000)
-      .setValue(selector.FO.SearchProductPage.product_search_input, 'test_nodejs_' + product_id)
+      .setValue(selector.FO.SearchProductPage.product_search_input, product_id)
       .click(selector.FO.SearchProductPage.product_search_button)
       .click(selector.FO.SearchProductPage.product_result_name)
-    if (type === 'create') {
-      return this.client
-        .waitForExist(selector.FO.SearchProductPage.attribut_name, 90000)
-        .then(() => this.client.getText(selector.FO.SearchProductPage.attribut_name))
-        .then((text) => expect(text).to.be.equal(global.attributeName));
-    } else if ('update'){
-      return this.client
-        .waitForExist(selector.FO.SearchProductPage.attribut_name, 90000)
-        .then(() => this.client.getText(selector.FO.SearchProductPage.attribut_name))
-        .then((text) => expect(text).to.be.equal(global.attributeName + 'update'));
-    }
 
   }
 
-  checkForProductAttributFO(type) {
+  checkCreatedAttributNameForProduct() {
     return this.client
-    if (type === 'create') {
-      return this.client
-        .then(() => this.client.getText('//*[@id="add-to-cart-or-refresh"]/div[1]/div/ul/li[1]/label/span'))
-        .then((text) => expect(text).to.be.equal('10'))
-        .then(() => this.client.getText('//*[@id="add-to-cart-or-refresh"]/div[1]/div/ul/li[2]/label/span'))
-        .then((text) => expect(text).to.be.equal('20'))
-        .then(() => this.client.getText('//*[@id="add-to-cart-or-refresh"]/div[1]/div/ul/li[3]/label/span'))
-        .then((text) => expect(text).to.be.equal('30'));
-    } else if ('deleted') {
-      return this.client
-        .then(() => this.client.getText('//*[@id="add-to-cart-or-refresh"]/div[1]/div/ul/li[1]/label/span'))
-        .then((text) => expect(text).to.be.equal('20'))
-        .then(() => this.client.getText('//*[@id="add-to-cart-or-refresh"]/div[1]/div/ul/li[2]/label/span'))
-        .then((text) => expect(text).to.be.equal('30'));
-    } else {
-      return this.client
-        .then(() => this.client.getText('//*[@id="add-to-cart-or-refresh"]/div[1]/div/ul/li[1]/label/span'))
-        .then((text) => expect(text).to.be.equal('40'))
-        .then(() => this.client.getText('//*[@id="add-to-cart-or-refresh"]/div[1]/div/ul/li[2]/label/span'))
-        .then((text) => expect(text).to.be.equal('20'))
-        .then(() => this.client.getText('//*[@id="add-to-cart-or-refresh"]/div[1]/div/ul/li[3]/label/span'))
-        .then((text) => expect(text).to.be.equal('30'));
+      .waitForExist(selector.FO.SearchProductPage.attribut_name, 90000)
+      .then(() => this.client.getText(selector.FO.SearchProductPage.attribut_name))
+      .then((text) => expect(text).to.be.equal(global.attributeName));
+  }
+
+  checkUpdatedAttributNameForProduct() {
+    return this.client
+      .waitForExist(selector.FO.SearchProductPage.attribut_name, 90000)
+      .then(() => this.client.getText(selector.FO.SearchProductPage.attribut_name))
+      .then((text) => expect(text).to.be.equal(global.attributeName + 'update'));
+  }
+
+
+
+  checkForProductAttributValueCreatedFO(type) {
+    return this.client
+      .then(() => this.client.getText(selector.FO.SearchProductPage.attribut_value_1))
+      .then((text) => expect(text).to.be.equal('10'))
+      .then(() => this.client.getText(selector.FO.SearchProductPage.attribut_value_2))
+      .then((text) => expect(text).to.be.equal('20'))
+      .then(() => this.client.getText(selector.FO.SearchProductPage.attribut_value_3))
+      .then((text) => expect(text).to.be.equal('30'));
     }
+
+  checkForProductAttributValueUpdatedFO(type) {
+    return this.client
+      .then(() => this.client.getText(selector.FO.SearchProductPage.attribut_value_1))
+      .then((text) => expect(text).to.be.equal('40'))
+      .then(() => this.client.getText(selector.FO.SearchProductPage.attribut_value_2))
+      .then((text) => expect(text).to.be.equal('20'))
+      .then(() => this.client.getText(selector.FO.SearchProductPage.attribut_value_3))
+      .then((text) => expect(text).to.be.equal('30'));
+  }
+
+  checkForProductAttributValuedeletedFO(type) {
+    return this.client
+      .then(() => this.client.getText(selector.FO.SearchProductPage.attribut_value_1))
+      .then((text) => expect(text).to.be.equal('20'))
+      .then(() => this.client.getText(selector.FO.SearchProductPage.attribut_value_2))
+      .then((text) => expect(text).to.be.equal('30'));
   }
 
   updateAttributName() {
@@ -173,11 +179,6 @@ class Attribut extends PrestashopClient {
 
   checkDeletedAttributFO() {
     return this.client
-      .waitForExist(selector.FO.SearchProductPage.product_search_input, 90000)
-      .setValue(selector.FO.SearchProductPage.product_search_input, 'test_nodejs_' + product_id)
-      .click(selector.FO.SearchProductPage.product_search_button)
-      .waitForExist(selector.FO.SearchProductPage.product_result_name, 90000)
-      .click(selector.FO.SearchProductPage.product_result_name)
       .then(() => this.client.isExisting(selector.FO.SearchProductPage.attribut_name))
       .then((value) => expect(value).to.be.false);
   }

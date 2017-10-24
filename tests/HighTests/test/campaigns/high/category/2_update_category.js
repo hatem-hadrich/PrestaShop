@@ -27,5 +27,5 @@ scenario('Check category in FO', client => {
   test('should sign in FO', () => client.signinFO());
   test('should open product list', () => client.openProductList());
   test('should check category existence', () => client.checkCategoryExistenceFO());
-  test('should sign in FO', () => client.signoutFO());
+  test('should sign out FO', () => client.signoutFO());
 }, 'category', true);
