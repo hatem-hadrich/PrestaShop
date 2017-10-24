@@ -61,6 +61,19 @@ class createProduct extends PrestashopClient {
         .setValue(selector.BO.AddProductPage.var_selected_quantitie, "10")
         .moveToObject('//*[@id="combinations_thead"]/tr/th[7]', 90000)
         .click(selector.BO.AddProductPage.save_quantitie_button)
+    } else if (type === "feature") {
+      return this.client
+        .moveToObject('//*[@id="add-categories"]/h2')
+        .click(selector.BO.AddProductPage.add_feature_to_product_button)
+        .waitForExist(selector.BO.AddProductPage.add_feature_to_product_button, 90000)
+        .moveToObject(selector.BO.AddProductPage.feature_select)
+        .click(selector.BO.AddProductPage.feature_select)
+        .waitForExist(selector.BO.AddProductPage.select_feature_created, 90000)
+        .setValue(selector.BO.AddProductPage.select_feature_created, global.featureName)
+        .click(selector.BO.AddProductPage.feature_choice)
+        .waitForExist(selector.BO.AddProductPage.feature_value_select, 90000)
+        .click(selector.BO.AddProductPage.feature_value_select)
+        .click(selector.BO.AddProductPage.feature_value_choice)
     }
   }
 
