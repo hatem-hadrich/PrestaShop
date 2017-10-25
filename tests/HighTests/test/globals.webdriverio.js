@@ -158,6 +158,10 @@ module.exports = {
           add_value_button:'//*[@id="page-header-desc-feature_value-new_feature_value"]',
           value_input:'//*[@id="value_1"]',
           save_value_button:'//*[@id="feature_value_form_submit_btn"]',
+          select_option:'//*[@id="table-feature"]/tbody/tr/td[6]/div/div/button',
+          update_feature_button:'//*[@id="table-feature"]/tbody/tr/td[6]/div/div/ul/li[1]/a',
+          update_feature_value_button:'//*[@id="table-feature_value"]/tbody/tr/td[3]/div/div/a',
+          delete_feature:'//*[@id="table-feature"]/tbody/tr/td[6]/div/div/ul/li[3]/a'
         }
       },
 
