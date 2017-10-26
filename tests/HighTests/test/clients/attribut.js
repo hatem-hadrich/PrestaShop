@@ -1,6 +1,6 @@
-const {getClient} = require('../common.webdriverio.js');
-const {selector} = require('../globals.webdriverio.js');
-const PrestashopClient = require('./prestashop_client');
+var PrestashopClient = require('./prestashop_client');
+var {selector} = require('../globals.webdriverio.js');
+
 
 global.attributeName = 'attribute' + new Date().getTime();
 

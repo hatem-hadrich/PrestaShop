@@ -1,9 +1,9 @@
-const {getClient} = require('../common.webdriverio.js');
+let common = require('../common.webdriverio.js');
 const {selector} = require('../globals.webdriverio.js');
 
 class PrestashopClient {
   constructor() {
-    this.client = getClient();
+    this.client = common.getClient();
   }
 
   signinBO() {
