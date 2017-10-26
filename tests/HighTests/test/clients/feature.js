@@ -1,8 +1,7 @@
-const {getClient} = require('../common.webdriverio.js');
-const {selector} = require('../globals.webdriverio.js');
-const PrestashopClient = require('./prestashop_client');
+var PrestashopClient = require('./prestashop_client');
+var {selector} = require('../globals.webdriverio.js');
 
-global.featureName = 'feature' + new Date().getTime();
+global.featureName = 'Feature' + new Date().getTime();
 
 class Feature extends PrestashopClient {
 
@@ -33,7 +32,6 @@ class Feature extends PrestashopClient {
       .waitForExist(selector.BO.CatalogPage.FeatureSubmenu.save_button, 90000)
       .click(selector.BO.CatalogPage.FeatureSubmenu.save_button);
   }
-
 
   searchFeature() {
     return this.client
@@ -67,26 +65,25 @@ class Feature extends PrestashopClient {
       .click(selector.FO.SearchProductPage.product_result_name);
   }
 
-  checkForProductfeatureCreateFO() {
+  checkCreatedFeature() {
     return this.client
-      .then(() => this.client.getText(selector.FO.SearchProductPage.feature_value))
-      .then((text) => expect(text).to.be.equal('feature value'))
-      .waitForExist(selector.FO.SearchProductPage.feature_name, 90000)
+      .waitForExist(selector.FO.SearchProductPage.feature_value, 90000)
       .then(() => this.client.getText(selector.FO.SearchProductPage.feature_name))
-      .then((text) => expect(text).to.be.equal(global.featureName));
+      .then((text) => expect(text).to.be.equal(global.featureName))
+      .then(() => this.client.getText(selector.FO.SearchProductPage.feature_value))
+      .then((text) => expect(text).to.be.equal('feature value'));
   }
 
-  checkForProductfeatureUpdateFO() {
+  checkUpdatedFeature() {
     return this.client
-      .pause(3000)
-      .then(() => this.client.getText(selector.FO.SearchProductPage.feature_value))
-      .then((text) => expect(text).to.be.equal('feature value update'))
       .waitForExist(selector.FO.SearchProductPage.feature_name, 90000)
       .then(() => this.client.getText(selector.FO.SearchProductPage.feature_name))
-      .then((text) => expect(text).to.be.equal(global.featureName + 'update'));
-}
+      .then((text) => expect(text).to.be.equal(global.featureName + 'update'))
+      .then(() => this.client.getText(selector.FO.SearchProductPage.feature_value))
+      .then((text) => expect(text).to.be.equal('feature value update'))
+  }
 
-  checkForProductfeatureDeleteFO() {
+  checkDeletedFeature() {
     return this.client
       .pause(3000)
       .then(() => this.client.isExisting(selector.FO.SearchProductPage.feature_name))

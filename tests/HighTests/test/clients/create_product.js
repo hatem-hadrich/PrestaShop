@@ -3,7 +3,6 @@ var {selector} = require('../globals.webdriverio.js');
 
 class createProduct extends PrestashopClient {
 
-
   goToProductMenu() {
     return this.client
       .waitForExist(selector.BO.AddProductPage.menu, 90000)
@@ -51,7 +50,7 @@ class createProduct extends PrestashopClient {
       .click(selector.BO.AddProductPage.variations_select)
       .waitForExist(selector.BO.AddProductPage.variations_generate, 90000)
       .click(selector.BO.AddProductPage.variations_generate)
-      .pause(5000)
+      .pause(3000)
       .waitForExist(selector.BO.AddProductPage.var_selected, 90000)
       .click(selector.BO.AddProductPage.var_selected)
       .pause(3000)
