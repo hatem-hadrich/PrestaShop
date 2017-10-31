@@ -139,6 +139,22 @@ module.exports = {
           delete_attribut_button:'//*[@id="table-attribute_group"]/tbody/tr/td[6]/div/div/ul/li[3]/a',
           update_button:'//*[@id="table-attribute_group"]/tbody/tr/td[6]/div/div/ul/li[1]/a',
           update_value_button:'//*[@id="table-attribute"]/tbody/tr[1]/td[5]/div/div/a'
+        },
+        StockSubmenu:{
+          submenu: '//*[@id="collapse-9"]/li[8]/a',
+          first_product_quantity_input:'//*[@id="app"]/div[3]/section/table/tbody/tr[1]/td[7]/form/span/input',
+          first_product_quantity:'//*[@id="app"]/div[3]/section/table/tbody/tr[1]/td[6]',
+          first_product_quantity_modified:'//*[@id="app"]/div[3]/section/table/tbody/tr[1]/td[6]/span',
+
+          second_product_quantity_input:'//*[@id="app"]/div[3]/section/table/tbody/tr[2]/td[7]/form/span/input',
+          second_product_quantity:'//*[@id="app"]/div[3]/section/table/tbody/tr[2]/td[6]',
+          second_product_quantity_modified:'//*[@id="app"]/div[3]/section/table/tbody/tr[2]/td[6]/span',
+
+          third_product_quantity_input:'//*[@id="app"]/div[3]/section/table/tbody/tr[3]/td[7]/form/span/input',
+          third_product_quantity:'//*[@id="app"]/div[3]/section/table/tbody/tr[3]/td[6]',
+          third_product_quantity_modified:'//*[@id="app"]/div[3]/section/table/tbody/tr[3]/td[6]/span',
+
+          save_button:'//*[@id="app"]/div[3]/section/div/div[2]/div/button'
         }
       },
 
