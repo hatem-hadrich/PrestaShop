@@ -93,7 +93,7 @@ module.exports = {
       //catalog selector
       CatalogPage: {
         menu_button: '//*[@id="subtab-AdminCatalog"]/a',
-        success_panel:'//*[@id="content"]/div[3]/div',
+        success_panel: '//*[@id="content"]/div[3]/div',
         CategorySubmenu: {
           submenu: '//*[@id="subtab-AdminCategories"]/a',
           new_category_button: '//*[@id="page-header-desc-category-new_category"]/div',
@@ -142,19 +142,23 @@ module.exports = {
         },
         StockSubmenu:{
           submenu: '//*[@id="collapse-9"]/li[8]/a',
-          first_product_quantity_input:'//*[@id="app"]/div[3]/section/table/tbody/tr[1]/td[7]/form/span/input',
-          first_product_quantity:'//*[@id="app"]/div[3]/section/table/tbody/tr[1]/td[6]',
-          first_product_quantity_modified:'//*[@id="app"]/div[3]/section/table/tbody/tr[1]/td[6]/span',
-
-          second_product_quantity_input:'//*[@id="app"]/div[3]/section/table/tbody/tr[2]/td[7]/form/span/input',
-          second_product_quantity:'//*[@id="app"]/div[3]/section/table/tbody/tr[2]/td[6]',
-          second_product_quantity_modified:'//*[@id="app"]/div[3]/section/table/tbody/tr[2]/td[6]/span',
-
-          third_product_quantity_input:'//*[@id="app"]/div[3]/section/table/tbody/tr[3]/td[7]/form/span/input',
-          third_product_quantity:'//*[@id="app"]/div[3]/section/table/tbody/tr[3]/td[6]',
-          third_product_quantity_modified:'//*[@id="app"]/div[3]/section/table/tbody/tr[3]/td[6]/span',
-
-          save_button:'//*[@id="app"]/div[3]/section/div/div[2]/div/button'
+          first_product_quantity_input: '//*[@id="app"]/div[3]/section/table/tbody/tr[1]/td[7]/form/span/input',
+          first_product_quantity: '//*[@id="app"]/div[3]/section/table/tbody/tr[1]/td[6]',
+          first_product_quantity_modified: '//*[@id="app"]/div[3]/section/table/tbody/tr[1]/td[6]/span',
+          second_product_quantity_input: '//*[@id="app"]/div[3]/section/table/tbody/tr[2]/td[7]/form/span/input',
+          second_product_quantity: '//*[@id="app"]/div[3]/section/table/tbody/tr[2]/td[6]',
+          second_product_quantity_modified: '//*[@id="app"]/div[3]/section/table/tbody/tr[2]/td[6]/span',
+          third_product_quantity_input: '//*[@id="app"]/div[3]/section/table/tbody/tr[3]/td[7]/form/span/input',
+          third_product_quantity: '//*[@id="app"]/div[3]/section/table/tbody/tr[3]/td[6]',
+          third_product_quantity_modified: '//*[@id="app"]/div[3]/section/table/tbody/tr[3]/td[6]/span',
+          save_third_product_quantity_button: '//*[@id="app"]/div[3]/section/table/tbody/tr[3]/td[7]/form/button',
+          fourth_product_quantity_input: '//*[@id="app"]/div[3]/section/table/tbody/tr[4]/td[7]/form/span/input',
+          fourth_product_quantity: '//*[@id="app"]/div[3]/section/table/tbody/tr[4]/td[6]',
+          fourth_product_quantity_modified: '//*[@id="app"]/div[3]/section/table/tbody/tr[4]/td[6]/span',
+          save_fourth_product_quantity_button: '//*[@id="app"]/div[3]/section/table/tbody/tr[4]/td[7]/form/button',
+          group_apply_button: '//*[@id="app"]/div[3]/section/div/div[2]/div/button',
+          add_quantity_button: '//*[@id="app"]/div[3]/section/table/tbody/tr[3]/td[7]/form/span/a[1]',
+          success_panel: '//*[@id="growls"]'
         }
       },
 
@@ -175,7 +179,6 @@ module.exports = {
         page_loaded: '.module-search-result-wording',
         installed_modules_tabs: '(//div[@class="page-head-tabs"]/a)[2]',
         module_number_span: '[class="module-sorting-search-wording"]',
-
         module_tech_name: '//div[@data-tech-name="' + module_tech_name + '" and not(@style)]',
         install_module_btn: '//div[@data-tech-name="' + module_tech_name + '" and not(@style)]//button[@data-confirm_modal="module-modal-confirm-' + module_tech_name + '-install"]',
         uninstall_module_list: '//div[@data-tech-name="' + module_tech_name + '" and not(@style)]//button[@class="btn btn-primary-outline  dropdown-toggle"]',
@@ -189,7 +192,6 @@ module.exports = {
         stop_button: '.onboarding-button-stop'
       }
     },
-
 
     //FO
     FO: {
